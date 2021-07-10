@@ -2,6 +2,7 @@
 instrucciones de uso
 antes de esto debes tener una base de datos en postgres que se llame "credito"
 y si tienes una contraseña diferente de "password" modifcar el archivo
+
 ![image](https://user-images.githubusercontent.com/56244689/125176109-85bc8280-e196-11eb-94a2-a5ed207d7c6f.png)
 1. descarga o clona el proyecto
 2. ejecuta python -m venv env
@@ -20,4 +21,12 @@ y si tienes una contraseña diferente de "password" modifcar el archivo
 (para lo siguiente necesitas un superuser entonces ejecuta "python manage.py createsuperuser" y sigue los pasos)
 
 15. ejecuta python manage.py runserver
-16. ingresa a localhost:8000
+16. ingresa a localhost:8000 (o en el lugar donde lo vayas a correr)
+17. te tienes que logguear en un simple sign in y sign up
+18. luego tendras que ir a localhost:8000/admin/
+
+ahi podras asignarle una deuda de SBS al usuario que acabas de crear
+para que despues puedes agregar una solicitud de credito a ese usuario
+esas solicitudes las encontraras en el apartado de solicitudes o dando click en tu perfil
+
+el apartado visual lo tome de esta pagina https://datadosis.com/datasets/
