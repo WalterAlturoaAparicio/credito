@@ -1,7 +1,7 @@
 # credito
 instrucciones de uso
 antes de esto debes tener una base de datos en postgres que se llame "credito"
-y si tienes una contraseña diferente de "password" modifcar el archivo
+y si tienes una contraseña diferente de "password" modifcar el archivo .env
 
 ![image](https://user-images.githubusercontent.com/56244689/125176109-85bc8280-e196-11eb-94a2-a5ed207d7c6f.png)
 1. descarga o clona el proyecto
