@@ -1,0 +1,23 @@
+from django.contrib import admin
+from .models import Payment, Product, Order, OrderItem, ColourVariation, SizeVariation, Address, Category
+# Register your models here.
+
+
+class AddressAdmin(admin.ModelAdmin):
+    list_display = [
+        'address_type',
+        'address_line_1',
+        'address_line_2',
+        'zip_code',
+        'city',
+    ]
+
+
+admin.site.register(Product)
+admin.site.register(Order)
+admin.site.register(OrderItem)
+admin.site.register(ColourVariation)
+admin.site.register(SizeVariation)
+admin.site.register(Address, AddressAdmin)
+admin.site.register(Payment)
+admin.site.register(Category)

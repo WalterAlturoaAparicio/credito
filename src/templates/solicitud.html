@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="site-sectino">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-m-12">
+        <h2 class="text-black">Solicitud #{{ solicitud.pk }}</h2>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ request.user.email }}</h5>
+            <a href="{% url 'account_logout' %}"
+              ><small class="float-right">Logout</small></a
+            >
+          </div>
+          <hr />
+          <div class="site-blocks-table">
+            <div>
+              <h4>
+                Puntaje del algoritmo {{ solicitud.ia_algoritm }}
+              </h4>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>No. Referencia</th>
+                  <th>Usuario</th>
+                  <th>Fecha</th>
+                  <th>Monto</th>
+                  <th>Deuda SBS</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#{{ solicitud.pk }} </td>
+                  <td><a href="#">{{ solicitud.user }}</a></td>
+                  <td>{{ solicitud.fecha }}</td>
+                  <td>${{ solicitud.get_monto }}</td>
+                  <td>${{ solicitud.sbs_status.get_sbs_status }}</td>
+                  <td>{{ solicitud.get_estado_display }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              {% if solicitud.estado == "E" %}
+                <div>
+                  <a href="{% url 'aprobado' solicitud.id %}" class="btn btn-primary mb-3">Aprobar</a>
+                  <a href="{% url 'rechazado' solicitud.id %}" class="btn btn-danger mb-3">Rechazar</a>
+                </div>
+                <div>
+                  
+                </div>
+              {% endif %}
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
